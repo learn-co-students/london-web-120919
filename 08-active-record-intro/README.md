@@ -1,4 +1,4 @@
-## Sample Student Facing README:
+
 
 ### Rake and File Structure
 
