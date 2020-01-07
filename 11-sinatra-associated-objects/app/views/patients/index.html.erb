@@ -1,0 +1,4 @@
+<h1>all the patients</h1>
+<% @patients.each do |patient| %>
+    <h2><a href="/patients/<%= patient.id %>"><%= patient.name %></a></h2>
+<% end %>

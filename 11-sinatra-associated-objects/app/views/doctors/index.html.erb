@@ -1,0 +1,4 @@
+<h1>all the docs.</h1>
+<% @doctors.each do |doctor| %>
+    <h1><a href="/doctors/<%= doctor.id %>"><%= doctor.name %></a></h1>
+<% end %>

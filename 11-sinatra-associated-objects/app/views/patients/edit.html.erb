@@ -1,0 +1,5 @@
+<form method="POST" action="/patients/<%= @patient.id %>">
+    <input type="hidden" name="_method" value="PATCH" />
+    <input name="patient[name]" placeholder="Name" value="<%= @patient.name %>" />
+    <input type="submit" />
+</form>

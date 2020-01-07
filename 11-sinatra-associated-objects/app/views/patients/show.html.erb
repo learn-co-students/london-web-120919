@@ -1,0 +1,7 @@
+<h1><%= @patient.name %></h1>
+
+<a href="/patients/<%= @patient.id %>/edit">edit this patient</a>
+<form method="POST" action="/patients/<%= @patient.id %>">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="delete this patient" />
+</form>
