@@ -1,4 +1,4 @@
 <h1>all the docs.</h1>
 <% @doctors.each do |doctor| %>
-    <h1><a href="/doctors/<%= doctor.id %>"><%= doctor.name %></a></h1>
+    <h1><a href="/doctors/<%= doctor.id %>"><%= doctor.name ? doctor.name : 'this doc has no name' %></a></h1>
 <% end %>

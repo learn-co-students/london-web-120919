@@ -1,0 +1,25 @@
+<form action="/appointments" method="POST" >
+    <input type="date" placeholder="pick a date" name="appointment[date]" />
+    <input type="time" placeholder="pick a time" name="appointment[time]" />
+    <input type="text" placeholder="where?" name="appointment[location]" />
+    <input type="number" placeholder="how long?" name="appointment[duration]" step="1" />
+    
+    <% if params["doctor_id"]%>
+        <p>you are booking with <%= Doctor.find(params["doctor_id"]).name %></p>
+        <input type="hidden" name="appointment[doctor_id]" value="<%= params["doctor_id"] %>" />
+    <% else %>
+    <select name="appointment[doctor_id]">
+        <% @doctors.each do |doctor| %>
+            <option value="<%= doctor.id %>" >Dr. <%= doctor.name %>, a specialist in <%= doctor.speciality %></option>
+        <% end %>
+    </select>
+    <% end %>
+
+    <select name="appointment[patient_id]">
+        <% @patients.each do |patient| %>
+            <option value="<%= patient.id %>" ><%= patient.name %></option>
+        <% end %>
+    </select>
+    
+    <input type="submit" value="book appointment" />
+</form>

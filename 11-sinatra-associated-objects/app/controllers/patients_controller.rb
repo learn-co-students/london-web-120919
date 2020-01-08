@@ -33,7 +33,7 @@ class PatientsController < ApplicationController
   patch "/patients/:id" do
     patient = Patient.find(params["id"])
     patient.update(params["patient"])
-    redirect "/patients/:id"
+    redirect "/patients/#{patient.id}"
   end
 
   # DELETE: /patients/5/delete

@@ -1,0 +1,6 @@
+<p><%= @appointment.date %></p>
+<p><%= @appointment.time.strftime("%H:%M") %></p>
+<p><%= @appointment.location %></p>
+<p><%= @appointment.duration %> minutes</p>
+<p>Dr. <%= @appointment.doctor.name %></p>
+<p><%= @appointment.patient.name %></p>
