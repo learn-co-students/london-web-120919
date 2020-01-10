@@ -1,0 +1,5 @@
+<h1><%= @film.title %></h1>
+<p>dir: <%= @film.director %></p>
+<p>runtime: <%= @film.runtime %></p>
+<p>release date: <%= @film.release_date.strftime("%d %A %Y") %></p>
+<%= link_to 'edit this movie', edit_film_path(@film) %>
