@@ -1,0 +1,7 @@
+<%= form_for(@user) do |form| %>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+    <%= form.submit %>
+<% end %>

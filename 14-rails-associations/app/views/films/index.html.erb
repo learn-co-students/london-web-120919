@@ -1,4 +1,4 @@
 <h1>Films#index</h1>
 <% @films.each do |film| %>
-    <h2><%= link_to film.title, film_path(film) %></h2>
+    <h2><%= link_to film.title, film_path(film) %> reviewed <%= film.reviews.size %> <%= 'time'.pluralize(film.reviews.size) %>, average rating <%= film.average_rating %>/5</h2>
 <% end %>

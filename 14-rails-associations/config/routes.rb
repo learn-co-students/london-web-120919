@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :reviews, only: [:new, :create, :show]
+  resources :users, only: [:index, :show, :new, :create, :edit, :update]
   get '/films', to: 'films#index'
   get '/films/new', to: 'films#new', as: 'new_film'
   get '/films/:id', to: 'films#show', as: 'film'
