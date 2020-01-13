@@ -10,6 +10,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <%= link_to 'all films', films_path %>
+      <%= link_to 'new film', new_film_path %>
+      <%= link_to 'all users', users_path %>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

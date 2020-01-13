@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  max-width: 30em;
+  margin: auto;
+}
+
+nav {
+  background: rgb(144, 161, 65);
+  display: flex;
+}
+
+nav > a {
+  margin: auto;
+  height: 2em;
+  display: block;
+  background: rgba(128, 128, 128, 0.26);
+  min-width: 10em;
+  text-align: center;
+  line-height: 200%;
+}
+
+nav > a:hover {
+  background: rgba(231, 231, 231, 0.26);
+}
