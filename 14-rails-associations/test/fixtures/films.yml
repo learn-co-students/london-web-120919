@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  runtime: 1
+  director: MyString
+  genre: MyString
+  release_date: 2020-01-10
+
+two:
+  title: MyString
+  runtime: 1
+  director: MyString
+  genre: MyString
+  release_date: 2020-01-10
