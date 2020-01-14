@@ -1,0 +1,9 @@
+<% if params[:sort] %>
+<%= link_to 'sort by default', recipes_path %>
+<% else %>
+<%= link_to 'sort by ings', recipes_path({sort: true}) %>
+<% end %>
+
+<% @recipes.each do |recipe| %>
+    <p><%= recipe.name %> has <%= recipe.ingredients.size %> ingredients</p>
+<% end %>

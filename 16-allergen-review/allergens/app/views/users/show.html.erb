@@ -1,0 +1,7 @@
+<h1><%= @user.name %>'s recipes</h1>
+
+<% @user.recipes.each do |recipe| %>
+    <p><%= recipe.name %> has <%= recipe.ingredient_names %></p>
+<% end %>
+
+<%= link_to 'delete this user', user_path(@user), method: 'delete', data: {confirm: 'are you sure, you will lose all your recipes'} %>

@@ -1,0 +1,3 @@
+<% @ingredients.each do |ingredient| %>
+    <p><%= link_to ingredient.name, ingredient %> has <%= ingredient.num_users_allergic %> allergic users</p>
+<% end %>
