@@ -1,0 +1,10 @@
+<h1>Films#new</h1>
+
+<%= form_tag(film_path(@film), {method: 'patch'}) do |form| %>
+    <%= text_field_tag :'film[title]', @film.title, {placeholder: 'title'} %>
+    <%= text_field_tag :'film[director]', @film.director, {placeholder: 'director'} %>
+    <%= number_field_tag :'film[runtime]', @film.runtime, {placeholder: 'runtime'} %>
+    <%= text_field_tag :'film[genre]', @film.genre, {placeholder: 'genre'} %>
+    <%= date_field_tag :'film[release_date]', @film.release_date, {placeholder: 'date'} %>
+    <%= submit_tag 'edit film' %>
+<% end %>

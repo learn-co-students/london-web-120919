@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FilmReviews</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'all films', films_path %>
+      <%= link_to 'new film', new_film_path %>
+      <%= link_to 'all users', users_path %>
+      <%= link_to 'new user', new_user_path %>
+      <%= link_to 'new review', new_review_path %>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

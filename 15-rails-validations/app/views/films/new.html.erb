@@ -1,0 +1,10 @@
+<h1>Films#new</h1>
+
+<%= form_tag(films_path) do |form| %>
+    <%= text_field_tag :'film[title]', nil, {placeholder: 'title'} %>
+    <%= text_field_tag :'film[director]', nil, {placeholder: 'director'} %>
+    <%= number_field_tag :'film[runtime]', nil, {placeholder: 'runtime'} %>
+    <%= text_field_tag :'film[genre]', nil, {placeholder: 'genre'} %>
+    <%= date_field_tag :'film[release_date]', nil, {placeholder: 'date'} %>
+    <%= submit_tag 'create film' %>
+<% end %>

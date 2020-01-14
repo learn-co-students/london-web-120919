@@ -1,0 +1,4 @@
+<h1>Review for <%= link_to @review.film.title, @review.film %></h1>
+<h3>by <%= link_to @review.user.username, @review.user %></h3>
+<p><%= @review.content %></p>
+<p><%= @review.rating%>/5</p>

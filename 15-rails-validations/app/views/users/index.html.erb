@@ -1,0 +1,6 @@
+<h2>all the users</h2>
+<ul>
+<% @users.each do |user| %>
+    <%= render 'user_card', {user: user} %>
+<% end %>
+</ul>

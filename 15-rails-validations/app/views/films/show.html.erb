@@ -1,0 +1,30 @@
+<h1><%= @film.title %></h1>
+<p>dir: <%= @film.director %></p>
+<p>runtime: <%= @film.runtime %></p>
+<p>release date: <%= @film.release_date.strftime("%d %A %Y") %></p>
+<%= link_to 'edit this movie', edit_film_path(@film) %>
+
+<%= form_for @review do |f| %>
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, @users, :id, :text_for_option %>
+    <%#  %>
+
+    <%= f.label :film_id %>
+    <%= f.collection_select :film_id, @films, :id, :title %>
+    <%#  %>
+
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+
+    <%= f.submit %>
+<% end %>
+
+<% @film.reviews.each do |review| %>
+<div>
+    <%= review.rating%>
+    <p><%= review.content %>
+    </div>
+<% end %>

@@ -1,0 +1,6 @@
+<h2><%= @user.username %></h2>
+<p>reviews by this user</p>
+<% @user.reviews.each do |review| %>
+    <%= link_to review.film.title, review %>
+<% end %>
+<%= link_to 'Edit this user', edit_user_path(@user) %>
