@@ -3690,3 +3690,1792 @@ Processing by FilmsController#show as HTML
 Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 1.4ms | Allocations: 8551)
 
 
+Started GET "/" for ::1 at 2020-01-14 11:30:03 +0000
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sbarker/.rvm/gems/ruby-2.5.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sbarker/.rvm/gems/ruby-2.5.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.3ms | Allocations: 469)
+Completed 200 OK in 29ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 2821)
+
+
+Started GET "/films" for ::1 at 2020-01-14 11:30:08 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:6:in `average_rating'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:9:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:6:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:9:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 3]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 4]]
+  ↳ app/views/films/index.html.erb:3
+  Rendered films/index.html.erb within layouts/application (Duration: 111.5ms | Allocations: 26244)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 172ms (Views: 160.3ms | ActiveRecord: 3.2ms | Allocations: 38201)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:30:14 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.6ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:9
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/show.html.erb:13
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:25
+  Rendered films/show.html.erb within layouts/application (Duration: 38.1ms | Allocations: 9919)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 51.1ms | ActiveRecord: 2.2ms | Allocations: 16631)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:30:58 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:9
+  Rendered films/show.html.erb within layouts/application (Duration: 29.6ms | Allocations: 7724)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.3ms | Allocations: 9580)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 1:Integer):
+     8:     <%= f.label :user_id %>
+     9:     <%= f.collection_select :user_id, @users, :id, :text_for_option %>
+    10:     
+    11:     <%= f.hidden_field :film_id, @film.id %>
+    12: 
+    13:     <%= f.label :content %>
+    14:     <%= f.text_field :content %>
+  
+app/views/films/show.html.erb:11
+app/views/films/show.html.erb:7
+Started GET "/films/1" for ::1 at 2020-01-14 11:31:05 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:9
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:22
+  Rendered films/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3154)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 0.6ms | Allocations: 9301)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:31:38 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:10
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:24
+  Rendered films/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2983)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.4ms | Allocations: 9053)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:31:56 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:10
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:30
+  Rendered films/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2994)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.7ms | Allocations: 9054)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:32:12 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:31
+  Rendered films/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2994)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.6ms | Allocations: 9061)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:32:23 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:31
+  Rendered films/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.5ms | Allocations: 9056)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:32:32 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:11
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 5790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 1.0ms | Allocations: 11778)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:32:51 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 5041)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.9ms | Allocations: 11106)
+
+
+Started GET "/films/1" for ::1 at 2020-01-14 11:32:58 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:11
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/show.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 5042)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.8ms | Allocations: 11129)
+
+
+Started GET "/films" for ::1 at 2020-01-14 11:33:07 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:6:in `average_rating'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:9:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:6:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:9:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 3]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 4]]
+  ↳ app/views/films/index.html.erb:3
+  Rendered films/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 8406)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 2.0ms | Allocations: 13030)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 11:33:08 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  Rendered films/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1205)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 2339)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil:NilClass):
+    1: <h1><%= @film.title %></h1>
+    2: <p>dir: <%= @film.director %></p>
+    3: <p>runtime: <%= @film.runtime %></p>
+    4: <p>release date: <%= @film.release_date.strftime("%d %A %Y") %></p>
+    5: <%= link_to 'edit this movie', edit_film_path(@film) %>
+    6: 
+    7: <%= form_for @review do |f| %>
+  
+app/views/films/show.html.erb:4
+Started GET "/films/2" for ::1 at 2020-01-14 11:33:48 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.6ms | Allocations: 9758)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 11:33:54 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.6ms | Allocations: 9756)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 11:34:00 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3694)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.6ms | Allocations: 9771)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:36:42 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"cd0rNREFcTCQcENPA10YBqYqeAjhwIwzpa/KUmh+0ZpW6n9VSePsVFvlfknGovy2jKsqAkm2j7Qtj+wFNoUSEw==", "review"=>{"user_id"=>"3", "film_id"=>"2", "content"=>"great", "rating"=>"5"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "content", "user_id", "film_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["content", "great"], ["user_id", 3], ["film_id", 2], ["created_at", "2020-01-14 11:36:42.896215"], ["updated_at", "2020-01-14 11:36:42.896215"]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/5
+Completed 302 Found in 15ms (ActiveRecord: 4.0ms | Allocations: 5221)
+
+
+Started GET "/reviews/5" for ::1 at 2020-01-14 11:36:42 +0000
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `show'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:2
+  Rendered reviews/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1731)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.5ms | Allocations: 7409)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 11:36:48 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3966)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 19.5ms | ActiveRecord: 0.9ms | Allocations: 9585)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:42:09 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"PMMNo1bxvLQTobgg0k4bk1U+obpQudrmCA7Bl2p9Amv0RZjohUenyPGKRTQH+6OaARqs4hqOJodpYLywaxUrRg==", "review"=>{"user_id"=>"1", "film_id"=>"2", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mReview Create (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("content", "user_id", "film_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", ""], ["user_id", 1], ["film_id", 2], ["created_at", "2020-01-14 11:42:09.992557"], ["updated_at", "2020-01-14 11:42:09.992557"]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/6
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms | Allocations: 4809)
+
+
+Started GET "/reviews/6" for ::1 at 2020-01-14 11:42:10 +0000
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:15:in `show'
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:1
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reviews/show.html.erb:2
+  Rendered reviews/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1476)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 6466)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 11:42:12 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5243)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.9ms | Allocations: 10266)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 11:42:41 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 5869)
+
+
+Started GET "/users/new" for ::1 at 2020-01-14 11:45:18 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.9ms | Allocations: 1190)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1510)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 7205)
+
+
+Started GET "/users" for ::1 at 2020-01-14 11:46:33 +0000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/_user_card.html.erb (Duration: 0.8ms | Allocations: 283)
+  Rendered users/_user_card.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered users/_user_card.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered users/_user_card.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 6907)
+
+
+Started GET "/users/new" for ::1 at 2020-01-14 11:46:41 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 761)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 836)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 5973)
+
+
+Started POST "/users" for ::1 at 2020-01-14 11:46:45 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"DHDsAYJVJHZns9RdD+8Cm5p+1P0sV8P9Z+FZgeY0NQmj4gQdlOn1qxMSppjl5xQ8mADZQ0Vq1JW0dlW+3iCVzw==", "user"=>{"email"=>"joe@childs.com", "username"=>"JChilds"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "joe@childs.com"], ["username", "JChilds"], ["created_at", "2020-01-14 11:46:45.717669"], ["updated_at", "2020-01-14 11:46:45.717669"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 2813)
+
+
+Started GET "/users/5" for ::1 at 2020-01-14 11:46:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/users/show.html.erb:3
+  Rendered users/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.3ms | Allocations: 6780)
+
+
+Started GET "/users" for ::1 at 2020-01-14 11:46:46 +0000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/_user_card.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered users/_user_card.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered users/_user_card.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered users/_user_card.html.erb (Duration: 0.3ms | Allocations: 47)
+  Rendered users/_user_card.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1247)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.1ms | Allocations: 6382)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:51:18 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3078)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.5ms | Allocations: 8380)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:53:48 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 22.1ms | Allocations: 11616)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 30.6ms | ActiveRecord: 2.1ms | Allocations: 24827)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:53:54 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"J9I8jQaBxQCuMS3cjUO16B7jEiHOoJeEK9bmlYLU1wgA5WjtXmdYZGWkENpIvFFYNGJAK2bWlAOj9sDC3C8UgQ==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>"10"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms | Allocations: 6096)
+
+
+Started GET "/reviews" for ::1 at 2020-01-14 11:53:54 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/reviews" for ::1 at 2020-01-14 11:55:37 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:55:40 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 11615)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 32.1ms | ActiveRecord: 2.4ms | Allocations: 24818)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:55:42 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"hy4KDIwVsy28Xw0m2aI7aeFMQQDbDftCNGqMfYG3bbigGV5s1PMuSXfKMCAcXd/Zy80TCnN7+MW8Sqoq30yuMQ==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>"10"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 30441ms (ActiveRecord: 0.6ms | Allocations: 71493)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/reviews_controller.rb:12:in `create'
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:56:39 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (2.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 359.3ms | Allocations: 2996041)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 744ms (Views: 449.6ms | ActiveRecord: 37.0ms | Allocations: 6042292)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:56:44 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"eJ9cnut0ul7TUKrSsFD82FuxvUw5yh+uBH1CeNe91cBfqAj+s5InOhjFl9R1rxhocTDvRpG8HCmMXWQviUYWSQ==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>"10"}, "commit"=>"Create Review"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (2.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 235ms (ActiveRecord: 9.6ms | Allocations: 1971557)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:56:45 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (1.3ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 136.3ms | Allocations: 1116558)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 256ms (Views: 229.2ms | ActiveRecord: 3.1ms | Allocations: 2127815)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:56:49 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"qrJ8lnRtFO7Ff7iX7Mr1AawqdAKfEgmR14phKdk6NuiNhSj2LIuJig7qhZEpNRGxhqsmCDdkChZfqkd+h8H1YQ==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (1.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (2.8ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 195ms (ActiveRecord: 7.0ms | Allocations: 1668735)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:56:49 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (2.0ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 138.4ms | Allocations: 1116557)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 264ms (Views: 232.5ms | ActiveRecord: 3.9ms | Allocations: 2127820)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:56:50 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"PdBmJUBVJ1tnuHBIap629/u/7cuk3q5o7oGPcSqtRXka5zJFGLO6P6wtTU6vYVJH0T6/wQyore9moakmdFaG8A==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (1.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 207ms (ActiveRecord: 4.5ms | Allocations: 1652585)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:56:50 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (1.8ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 140.1ms | Allocations: 1117312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 300ms (Views: 270.9ms | ActiveRecord: 4.3ms | Allocations: 2130815)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:56:52 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"Lx5t7MYc+tNPalXWbE/tYFrwNZmDXD9cT798IT7YxP0IKTmMnvpnt4T/aNCpsAnQcHFnkysqPNvHn1p2YCMHdA==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (1.0ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 201ms (ActiveRecord: 5.1ms | Allocations: 1652301)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:56:52 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (1.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 135.5ms | Allocations: 1118803)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 263ms (Views: 232.1ms | ActiveRecord: 3.4ms | Allocations: 2130812)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:57:01 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"8KUe9cRvSkEHZzPGtLetB+mqkjIscxP9/BqFR6cUSijXkkqVnInXJczyDsBxSEm3wyvAOIQFEHp0OqMQ+e+JoQ==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (1.9ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 199ms (ActiveRecord: 5.3ms | Allocations: 1652590)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 11:57:02 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:3
+  [1m[36mFilm Load (2.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:7
+  Rendered reviews/new.html.erb within layouts/application (Duration: 140.1ms | Allocations: 1116558)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 269ms (Views: 243.2ms | ActiveRecord: 4.3ms | Allocations: 2127813)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 11:57:11 +0000
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"aQ+H2XXAiQuZGrKcm/HqYIslq/qKdR3gjwG3OmRMTypOONO5LSYUb1KPj5peDg7QoaT58CIDHmcHIZFtOreMow==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (1.4ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (3.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 88916ms (ActiveRecord: 42.0ms | Allocations: 5806572)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/reviews_controller.rb:15:in `create'
+Started POST "/reviews" for ::1 at 2020-01-14 12:01:17 +0000
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"aQ+H2XXAiQuZGrKcm/HqYIslq/qKdR3gjwG3OmRMTypOONO5LSYUb1KPj5peDg7QoaT58CIDHmcHIZFtOreMow==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:11:in `create'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:11:in `create'
+  [1m[36mFilm Load (6.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:11:in `create'
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:11:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 951ms (ActiveRecord: 48.8ms | Allocations: 5913100)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:01:20 +0000
+Processing by ReviewsController#new as HTML
+Completed 500 Internal Server Error in 35995ms (ActiveRecord: 0.0ms | Allocations: 167013)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `new'
+app/controllers/reviews_controller.rb:5:in `new'
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:02:21 +0000
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:4
+  [1m[36mFilm Load (3.3ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:8
+  Rendered reviews/new.html.erb within layouts/application (Duration: 636.8ms | Allocations: 3946608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1207ms (Views: 829.6ms | ActiveRecord: 40.4ms | Allocations: 8082780)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:03:10 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 110.1ms | Allocations: 1128972)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms | Allocations: 1694981)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <div style="color: red;">
+    2: <% flash[:errors].each do |message| %>
+    3:     <p><%= message %></p>
+    4: <% end %>
+    5: </div>
+  
+app/views/reviews/new.html.erb:2
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:04:24 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:10
+  [1m[36mFilm Load (2.5ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:14
+  Rendered reviews/new.html.erb within layouts/application (Duration: 150.0ms | Allocations: 1520731)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 315ms (Views: 280.0ms | ActiveRecord: 4.3ms | Allocations: 3064443)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 12:04:26 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ve/U7HUpp1njBnXksQTf7Sbb//5PHt+zlINznm3Akm5y2ICMLc86PSiTSOJ0+ztdDFqt9Odo3DQco1XJMztR5w==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (5.7ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 268ms (ActiveRecord: 9.6ms | Allocations: 2623157)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:04:27 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:10
+  [1m[36mFilm Load (2.0ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:14
+  Rendered reviews/new.html.erb within layouts/application (Duration: 143.4ms | Allocations: 1457444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 276ms (Views: 241.5ms | ActiveRecord: 7.3ms | Allocations: 2766868)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 12:04:34 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"+xSsy1TQWhNnMOkP1tM5PpPe8lu0jxuQIJvrb/gBctvcI/irDDbHd6yl1AkTLN2OuV+gURz5GBeou804pvqxUg==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>"10"}, "commit"=>"Create Review"}
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (3.4ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 247ms (ActiveRecord: 6.9ms | Allocations: 2236446)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:04:34 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:10
+  [1m[36mFilm Load (2.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:14
+  Rendered reviews/new.html.erb within layouts/application (Duration: 150.4ms | Allocations: 1457442)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 284ms (Views: 255.5ms | ActiveRecord: 5.3ms | Allocations: 2766877)
+
+
+Started POST "/reviews" for ::1 at 2020-01-14 12:04:40 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"+aPyu9Xyy6Oia2nNjpAqimi09OipTxVh+4fKrWBWRpvelKbbjRRWx2n+VMtLb846QjWm4gE5FuZzp+z6Pq2FEg==", "review"=>{"user_id"=>"1", "film_id"=>"1", "content"=>"", "rating"=>"-1"}, "commit"=>"Create Review"}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[36mFilm Load (2.8ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/reviews_controller.rb:10:in `create'
+Redirected to http://localhost:3000/reviews/new
+Completed 302 Found in 233ms (ActiveRecord: 6.6ms | Allocations: 2254825)
+
+
+Started GET "/reviews/new" for ::1 at 2020-01-14 12:04:41 +0000
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/reviews/new.html.erb:10
+  [1m[36mFilm Load (2.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/reviews/new.html.erb:14
+  Rendered reviews/new.html.erb within layouts/application (Duration: 162.5ms | Allocations: 1457441)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 302ms (Views: 269.3ms | ActiveRecord: 5.9ms | Allocations: 2767026)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:10:07 +0000
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 30.0ms | Allocations: 251531)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 215ms (Views: 183.5ms | ActiveRecord: 0.0ms | Allocations: 1742666)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:10:14 +0000
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"4YUmhrYvyTsCOV0L9bKehAmDmTM25qwzYGe3wBP022DXR2/nvPhJwsPIoxIoineGLKtaIfbLzoHYgzWBHpcblQ==", "film"=>{"title"=>"", "director"=>"", "runtime"=>"", "genre"=>"", "release_date"=>"2020-01-31"}, "commit"=>"create film"}
+Redirected to http://localhost:3000/films/new
+Completed 302 Found in 287ms (ActiveRecord: 0.0ms | Allocations: 2634605)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:10:15 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 207381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 175ms (Views: 147.3ms | ActiveRecord: 0.0ms | Allocations: 1564940)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:12:01 +0000
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"HIJoyEB5OTPFx68ugBbaGp4k9UkIWLyw9Va7JSQhvqI7tTyoGJ+kVw5SkihF6T6qtKWnQ6Auvzd9dp1yetp9Kw==", "film"=>{"title"=>"", "director"=>"", "runtime"=>"", "genre"=>"", "release_date"=>"2020-01-31"}, "commit"=>"create film"}
+Redirected to http://localhost:3000/films/new
+Completed 302 Found in 65ms (ActiveRecord: 0.0ms | Allocations: 648841)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:12:01 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 25.3ms | Allocations: 251530)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 214ms (Views: 186.2ms | ActiveRecord: 0.0ms | Allocations: 1884118)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:12:44 +0000
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 18.4ms | Allocations: 207389)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 142ms (Views: 124.8ms | ActiveRecord: 0.0ms | Allocations: 1603279)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:12:54 +0000
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"j3BCW5XfXDnW1FdQeiYPbXCvJjCfFAw08jxWaxugM4aoRxY7zTnBXR1Bala/2evdWi50OjdiD7N6HHA8RVvwDw==", "film"=>{"title"=>"", "director"=>"", "runtime"=>"", "genre"=>"", "release_date"=>"2020-01-31"}, "commit"=>"create film"}
+Redirected to http://localhost:3000/films/new
+Completed 302 Found in 483ms (ActiveRecord: 15.7ms | Allocations: 4787233)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:12:55 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 19.0ms | Allocations: 207381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 164ms (Views: 138.1ms | ActiveRecord: 0.0ms | Allocations: 1572650)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:14:13 +0000
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"y0dpbdID4yBmGytJ72BRppjGGzkxXl/+qVT5oy2poXfscD0NiuV+RK2OFk8qn7UWskdJM5koXHkhdN/0c1Ji/g==", "film"=>{"title"=>"", "director"=>"", "runtime"=>"", "genre"=>"", "release_date"=>""}, "commit"=>"create film"}
+Completed 500 Internal Server Error in 375ms (ActiveRecord: 14.8ms | Allocations: 4129361)
+
+
+  
+NoMethodError (undefined method `>' for nil:NilClass):
+  
+app/models/film.rb:21:in `date_cannot_be_in_the_future'
+app/controllers/films_controller.rb:19:in `create'
+Started POST "/films" for ::1 at 2020-01-14 12:14:46 +0000
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"y0dpbdID4yBmGytJ72BRppjGGzkxXl/+qVT5oy2poXfscD0NiuV+RK2OFk8qn7UWskdJM5koXHkhdN/0c1Ji/g==", "film"=>{"title"=>"", "director"=>"", "runtime"=>"", "genre"=>"", "release_date"=>""}, "commit"=>"create film"}
+Redirected to http://localhost:3000/films/new
+Completed 302 Found in 475ms (ActiveRecord: 11.6ms | Allocations: 4954319)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:14:49 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 22.1ms | Allocations: 207388)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 155ms (Views: 136.1ms | ActiveRecord: 0.0ms | Allocations: 1618301)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:14:59 +0000
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"r/SF8cUUH5aPLDmGna08P8Erm5eKREE+bUetqD95yyWIw9GRnfKC8kS5BIBYUtiP66rJnSIyQrnlZ4v/YYIIrA==", "film"=>{"title"=>"", "director"=>"", "runtime"=>"", "genre"=>"sci fi", "release_date"=>"2020-01-31"}, "commit"=>"create film"}
+Redirected to http://localhost:3000/films/new
+Completed 302 Found in 207ms (ActiveRecord: 0.0ms | Allocations: 2137408)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:15:00 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 21.3ms | Allocations: 207381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 157ms (Views: 133.5ms | ActiveRecord: 0.0ms | Allocations: 1572648)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:16:33 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (1.9ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (2.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (2.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  Rendered films/index.html.erb within layouts/application (Duration: 724.9ms | Allocations: 6381402)
+Completed 500 Internal Server Error in 765ms (ActiveRecord: 31.6ms | Allocations: 6800727)
+
+
+  
+ActionView::Template::Error (nil can't be coerced into Integer):
+    1: <h1>Films#index</h1>
+    2: <% @films.each do |film| %>
+    3:     <h2><%= link_to film.title, film_path(film) %> reviewed <%= film.reviews.size %> <%= 'time'.pluralize(film.reviews.size) %>, average rating <%= film.average_rating %>/5</h2>
+    4: <% end %>
+  
+app/models/film.rb:16:in `+'
+app/models/film.rb:16:in `block in average_rating'
+app/models/film.rb:16:in `reduce'
+app/models/film.rb:16:in `average_rating'
+app/views/films/index.html.erb:3
+app/views/films/index.html.erb:2
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" ORDER BY "reviews"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" ORDER BY "reviews"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Destroy (1.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/films" for ::1 at 2020-01-14 12:17:41 +0000
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 3]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 4]]
+  ↳ app/views/films/index.html.erb:3
+  Rendered films/index.html.erb within layouts/application (Duration: 46.5ms | Allocations: 26576)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 89.6ms | ActiveRecord: 2.1ms | Allocations: 38997)
+
+
+Started GET "/films/4" for ::1 at 2020-01-14 12:17:46 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 4]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 26.3ms | Allocations: 9049)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 34.3ms | ActiveRecord: 1.1ms | Allocations: 16436)
+
+
+Started GET "/films/4/edit" for ::1 at 2020-01-14 12:17:59 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 701)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 6484)
+
+
+Started GET "/films/4/edit" for ::1 at 2020-01-14 12:18:29 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 401)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.2ms | Allocations: 6079)
+
+
+Started GET "/films/4/edit" for ::1 at 2020-01-14 12:19:34 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.1ms | Allocations: 7004)
+
+
+Started GET "/films/4/edit" for ::1 at 2020-01-14 12:20:12 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 574)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 13.5ms | ActiveRecord: 0.8ms | Allocations: 13289)
+
+
+Started DELETE "/films/4" for ::1 at 2020-01-14 12:20:14 +0000
+  
+ActionController::RoutingError (No route matches [DELETE] "/films/4"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/films/4" for ::1 at 2020-01-14 12:20:29 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m5WrzI2PwVXBRpwl1MqJyEoi7rAOzPILu1LYAMX4V5W8ov+s1WlcMQrToSMRNW14YKO8uqa68Ywzcv5XmwOUHA==", "commit"=>"delete film", "id"=>"4"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:51:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[36mFilm Destroy (0.4ms)[0m  [1m[31mDELETE FROM "films" WHERE "films"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/films
+Completed 302 Found in 24ms (ActiveRecord: 2.9ms | Allocations: 10405)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:20:29 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 3]]
+  ↳ app/views/films/index.html.erb:3
+  Rendered films/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 13857)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 1.5ms | Allocations: 18587)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:23:02 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 3]]
+  ↳ app/views/films/index.html.erb:3
+  Rendered films/index.html.erb within layouts/application (Duration: 28.0ms | Allocations: 19412)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 37.6ms | ActiveRecord: 2.0ms | Allocations: 26840)
+
+
+Started GET "/films/3" for ::1 at 2020-01-14 12:23:03 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 3]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 12.0ms | Allocations: 6520)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 21.1ms | ActiveRecord: 1.1ms | Allocations: 13773)
+
+
+Started GET "/films/3/edit" for ::1 at 2020-01-14 12:23:05 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1516)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.2ms | Allocations: 6664)
+
+
+Started DELETE "/films/3" for ::1 at 2020-01-14 12:23:06 +0000
+Processing by FilmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7YSXts8R8renhw1BIuE71EIYZQnvRcQEokBy8vV3J4iBmpI4pZoptpZI3DyXE5xZTkr/Psopo8QZEkj+avcwrg==", "commit"=>"delete film", "id"=>"3"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:51:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[36mFilm Destroy (0.7ms)[0m  [1m[31mDELETE FROM "films" WHERE "films"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/films
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms | Allocations: 2669)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:23:06 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  Rendered films/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 5997)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 1.0ms | Allocations: 10501)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:24:27 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  Rendered films/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 6180)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.8ms | Allocations: 11870)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:24:30 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 577)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 5863)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:24:44 +0000
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"tzTic3iIjeM9yK3SYQD1gSUjZveCYjhgLA63DpWZhL6B9qsScl8NGvw5U8u8OByDAAul5UJPWtKU6jVPmPpESw==", "film"=>{"title"=>"star wars 2", "director"=>"nill liucas", "runtime"=>"100", "genre"=>"comedy", "release_date"=>"2020-01-07"}, "commit"=>"create film"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/films_controller.rb:19:in `create'
+  [1m[36mFilm Create (0.4ms)[0m  [1m[32mINSERT INTO "films" ("title", "runtime", "director", "genre", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "star wars 2"], ["runtime", 100], ["director", "nill liucas"], ["genre", "comedy"], ["release_date", "2020-01-07"], ["created_at", "2020-01-14 12:24:44.134718"], ["updated_at", "2020-01-14 12:24:44.134718"]]
+  ↳ app/controllers/films_controller.rb:19:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/films_controller.rb:19:in `create'
+Redirected to http://localhost:3000/films/5
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms | Allocations: 3097)
+
+
+Started GET "/films/5" for ::1 at 2020-01-14 12:24:44 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 5]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3019)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 8204)
+
+
+Started GET "/films/5/edit" for ::1 at 2020-01-14 12:24:45 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.1ms | Allocations: 6728)
+
+
+Started DELETE "/films/5" for ::1 at 2020-01-14 12:24:46 +0000
+Processing by FilmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FiLZbNAAoK1Dp0lhT+ToFqyzHJ08CIeklKDUmSOpRRMxFY0MiOY9yYgydGeKGwymhjJOl5R+hCMcgPLOfVKGmg==", "id"=>"5"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:51:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[36mFilm Destroy (0.4ms)[0m  [1m[31mDELETE FROM "films" WHERE "films"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/films
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms | Allocations: 2643)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:24:46 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  Rendered films/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 5997)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 1.1ms | Allocations: 10505)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 12:25:02 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 12.0ms | Allocations: 4713)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 1.0ms | Allocations: 10325)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:25:02 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.0ms | Allocations: 587)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.1ms | Allocations: 6199)
+
+
+Started GET "/films/new" for ::1 at 2020-01-14 12:25:11 +0000
+Processing by FilmsController#new as HTML
+  Rendering films/new.html.erb within layouts/application
+  Rendered films/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 572)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 6251)
+
+
+Started POST "/films" for ::1 at 2020-01-14 12:25:20 +0000
+Processing by FilmsController#create as HTML
+  Parameters: {"authenticity_token"=>"XZ4qwv0dxe1REFTSgPlqMA79sp/cTHD/EHxmayMJ/ltrXGOj98pFFJDhqstdwYMyK9VxjRxhEk2omOQqLmo+rg==", "film"=>{"title"=>"star wars 2", "director"=>"nill liucas", "runtime"=>"1", "genre"=>"comedy", "release_date"=>"2020-01-01"}, "commit"=>"create film"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/films_controller.rb:19:in `create'
+  [1m[36mFilm Create (0.6ms)[0m  [1m[32mINSERT INTO "films" ("title", "runtime", "director", "genre", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "star wars 2"], ["runtime", 1], ["director", "nill liucas"], ["genre", "comedy"], ["release_date", "2020-01-01"], ["created_at", "2020-01-14 12:25:20.678035"], ["updated_at", "2020-01-14 12:25:20.678035"]]
+  ↳ app/controllers/films_controller.rb:19:in `create'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/films_controller.rb:19:in `create'
+Redirected to http://localhost:3000/films/6
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms | Allocations: 2752)
+
+
+Started GET "/films/6" for ::1 at 2020-01-14 12:25:20 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (0.3ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 6]]
+  ↳ app/views/films/show.html.erb:35
+  Rendered films/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3019)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 8211)
+
+
+Started GET "/films/6/edit" for ::1 at 2020-01-14 12:25:21 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 706)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.1ms | Allocations: 6500)
+
+
+Started DELETE "/films/6" for ::1 at 2020-01-14 12:25:22 +0000
+Processing by FilmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JWJailU4m8F8yBlVtsEOuWWrAxO4G4aYV020mzZzzioCVQ7qDd4GpbddJFNzPuoJTypRGRBthR/fbZLMaIgNow==", "id"=>"6"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:51:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[36mFilm Destroy (0.3ms)[0m  [1m[31mDELETE FROM "films" WHERE "films"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/films_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/films
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms | Allocations: 2655)
+
+
+Started GET "/films" for ::1 at 2020-01-14 12:25:22 +0000
+Processing by FilmsController#index as HTML
+  Rendering films/index.html.erb within layouts/application
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films"[0m
+  ↳ app/views/films/index.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 1]]
+  ↳ app/models/film.rb:16:in `reduce'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:13:in `average_rating'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/models/film.rb:16:in `reduce'
+  Rendered films/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 6180)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.8ms | Allocations: 10839)
+
+
+Started GET "/films/2" for ::1 at 2020-01-14 12:25:44 +0000
+Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:7:in `show'
+  Rendering films/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/films/show.html.erb:15
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."film_id" = ?[0m  [["film_id", 2]]
+  ↳ app/views/films/show.html.erb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/films/show.html.erb:39
+  Rendered films/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 4447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.8ms | Allocations: 11359)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:25:45 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 6508)
+
+
+Started GET "/srgdrg" for ::1 at 2020-01-14 12:29:46 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/srgdrg"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:31:10 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 7381)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:31:30 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 770)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 6953)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:32:10 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 11.4ms | ActiveRecord: 0.9ms | Allocations: 14474)
+
+
+Started GET "/films/2/delete" for ::1 at 2020-01-14 12:32:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/films/2/delete"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:32:21 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 0.6ms | Allocations: 415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.1ms | Allocations: 5411)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:32:51 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1335)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.2ms | Allocations: 7524)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:32:56 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.1ms | Allocations: 6934)
+
+
+Started GET "/films/2/edit" for ::1 at 2020-01-14 12:33:00 +0000
+Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFilm Load (0.2ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/films_controller.rb:35:in `edit'
+  Rendering films/edit.html.erb within layouts/application
+  Rendered films/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 743)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.2ms | Allocations: 6928)
+
+

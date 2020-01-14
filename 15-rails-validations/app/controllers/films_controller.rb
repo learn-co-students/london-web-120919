@@ -23,7 +23,12 @@ class FilmsController < ApplicationController
         runtime: film_params[:runtime],
         genre: film_params[:genre],
         )
-    redirect_to film_path(film)
+    if film.valid?
+      redirect_to film_path(film)
+    else
+      flash[:errors] = film.errors.full_messages
+      redirect_to new_film_path
+    end
   end
 
   def edit
@@ -43,6 +48,10 @@ class FilmsController < ApplicationController
   end
 
   def destroy
+    film = Film.find(params[:id])
+    film.destroy
+    flash[:notice] = "#{film.title} was deleted successfully"
+    redirect_to films_path
   end
   
   private

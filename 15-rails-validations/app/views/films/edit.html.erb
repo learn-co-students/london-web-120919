@@ -1,4 +1,4 @@
-<h1>Films#new</h1>
+<h1>Films edit</h1>
 
 <%= form_tag(film_path(@film), {method: 'patch'}) do |form| %>
     <%= text_field_tag :'film[title]', @film.title, {placeholder: 'title'} %>
@@ -8,3 +8,7 @@
     <%= date_field_tag :'film[release_date]', @film.release_date, {placeholder: 'date'} %>
     <%= submit_tag 'edit film' %>
 <% end %>
+
+<%= link_to 'Delete this film', @film, {method: 'delete', data: {confirm: 'are you sure you want to delete this?'}} %>
+<%# <%= link_to 'Delete this film', { controller: 'films', action: 'destroy' } %> 
+<%# <%= link_to 'Delete this film', delete_film_path(@film) %> 

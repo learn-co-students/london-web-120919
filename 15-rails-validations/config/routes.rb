@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/films/:id/edit', to: 'films#edit', as: 'edit_film'
   post '/films', to: 'films#create'
   patch '/films/:id', to: 'films#update'
+  delete '/films/:id', to: 'films#destroy'
+  delete '/films/:id/delete', to: 'films#destroy', as: 'delete_film'
 
   # resources :users
 
