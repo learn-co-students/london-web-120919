@@ -1,0 +1,22 @@
+<h1>create a heroine</h1>
+
+<% if flash[:errors] %>
+    <%= flash[:errors] %>
+<% end %>
+
+<%= form_for(@heroine) do |f| %>
+<div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+</div>
+<div class="field">
+    <%= f.label :super_name %>
+    <%= f.text_field :super_name %>
+</div>
+<div class="field">
+    <%= f.label :power_ids %>
+    <%= f.collection_select :power_ids, @powers, :id, :name %>
+</div>
+
+    <%= f.submit 'create hreoing', {class: 'btn positive'} %>
+<% end %>

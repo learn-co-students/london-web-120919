@@ -1,0 +1,13 @@
+<h2>All Superpowers</h2>
+
+<ul>
+  <% @powers.each do |power| %>
+    <li>
+      <%= power.name %>
+      <br>
+      Description: <%= power.description %>
+      num: <%= power.heroines.count %>
+    </li>
+    <br>
+  <% end %>
+</ul>

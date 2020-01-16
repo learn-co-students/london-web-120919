@@ -1,0 +1,10 @@
+<h2>All Heroines</h2>
+
+<ul>
+  <% @heroines.each do |heroine| %>
+    <li>
+      <%= link_to heroine.super_name, heroine %>
+    </li>
+    <br>
+  <% end %>
+</ul>
