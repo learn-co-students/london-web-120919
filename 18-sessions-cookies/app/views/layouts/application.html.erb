@@ -17,6 +17,11 @@
       <nav>
         <div class="container">
         <div class="float-left"><h3 style="margin-bottom: 0;">Cookie Quiz</h3></div>
+        <% if logged_in? %>
+        <div class="float-right">
+          <%= link_to 'Log out', logout_path %>
+        </div>
+        <% end %>
         </div>
       </nav>
     <div class="container">

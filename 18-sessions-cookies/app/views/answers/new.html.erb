@@ -9,10 +9,10 @@
 <% if flash[:notice] %>
     <h1><%= flash[:notice] %></h1>
 <% end %>
-
 <% if session[:score] %>
-    <h1>Score: <%= session[:score] %></h1>
+    <h1>Score <%= session[:score] %></h1>
 <% end %>
+
 
 <%= form_for @answer do |f| %>
   <fieldset>
@@ -20,11 +20,11 @@
     <%= f.hidden_field :instructor_id, value: @instructor.id %>
 
     <% if session[:user_id] %>
-    <%= f.label :user_id, "You are playing as #{@user.name}" %>
-    <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <p>You are playing as <%= @user.name %></p>
     <% else %>
-    <%= f.label :user_name, "Your name" %>
-    <%= f.text_field :user_name, value: @user.name %>
+        <%= f.label :user_name, "Your name" %>
+        <%= f.text_field :user_name, value: @user.name %>
     <% end %>
 
     <h4>What is <strong><%= @instructor.name.capitalize %>'s</strong> favourite cookie?</h4>

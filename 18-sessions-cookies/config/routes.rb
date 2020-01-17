@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'answers#new'
+  get '/logout', to: 'answers#logout', as: :logout
   resources :users
   resources :answers
   resources :questions
