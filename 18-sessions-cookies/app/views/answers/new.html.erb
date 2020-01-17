@@ -1,0 +1,59 @@
+<% if flash[:errors] %>
+    <div class="errors">
+        <h4>Oops!</h4>
+    <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+    <% end %>
+    </div>
+<% end %>
+<% if flash[:notice] %>
+    <h1><%= flash[:notice] %></h1>
+<% end %>
+
+<% if session[:score] %>
+    <h1>Score: <%= session[:score] %></h1>
+<% end %>
+
+<%= form_for @answer do |f| %>
+  <fieldset>
+
+    <%= f.hidden_field :instructor_id, value: @instructor.id %>
+
+    <% if session[:user_id] %>
+    <%= f.label :user_id, "You are playing as #{@user.name}" %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <% else %>
+    <%= f.label :user_name, "Your name" %>
+    <%= f.text_field :user_name, value: @user.name %>
+    <% end %>
+
+    <h4>What is <strong><%= @instructor.name.capitalize %>'s</strong> favourite cookie?</h4>
+
+    <% @options.each do |cookie| %>
+        <div>
+            <%= f.radio_button :cookie_id, cookie.id, id: "answer_#{cookie.id}" %>
+            <%= f.label cookie.id, cookie.name.capitalize, class: "label-inline" %>
+        </div>
+    <% end %>
+    <%= f.submit "Submit guess!" %>
+    </fieldset>
+
+<% end %>
+<% if !User.all.empty? %>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Questions answered</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% User.all_sorted_by_answers.each do |user| %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.answers.length %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<% end %>
