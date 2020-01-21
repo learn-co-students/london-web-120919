@@ -13860,3 +13860,209 @@ Processing by AnswersController#new as HTML
 Completed 200 OK in 1301ms (Views: 38.3ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-01-21 11:34:57 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by AnswersController#new as HTML
+  [1m[36mInstructor Load (0.3ms)[0m  [1m[34mSELECT "instructors".* FROM "instructors"[0m
+  ↳ app/controllers/answers_controller.rb:5
+  [1m[36mCookie Load (0.4ms)[0m  [1m[34mSELECT  "cookies".* FROM "cookies" WHERE "cookies"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:7
+  [1m[36mCookie Load (0.2ms)[0m  [1m[34mSELECT "cookies".* FROM "cookies"[0m
+  ↳ app/models/cookie.rb:4
+  Rendering answers/new.html.erb within layouts/application
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/answers/new.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/models/user.rb:6
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:7
+  Rendered answers/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 9621ms (Views: 732.0ms | ActiveRecord: 3.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPasswordDigestToUsers (20200121114348)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  ↳ db/migrate/20200121114348_add_password_digest_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200121114348"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Daniel Kaczmarczyk"], ["created_at", "2020-01-21 12:02:56.148879"], ["updated_at", "2020-01-21 12:02:56.148879"], ["password_digest", "$2a$12$VhGj99dKQ0Jjr10uCJuQcuIkvjyfZ13dxp3eUumtvJuoL6fo08.tK"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-01-21 12:10:04 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by AnswersController#new as HTML
+  [1m[36mInstructor Load (0.3ms)[0m  [1m[34mSELECT "instructors".* FROM "instructors"[0m
+  ↳ app/controllers/answers_controller.rb:5
+  [1m[36mCookie Load (0.2ms)[0m  [1m[34mSELECT  "cookies".* FROM "cookies" WHERE "cookies"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:7
+  [1m[36mCookie Load (0.2ms)[0m  [1m[34mSELECT "cookies".* FROM "cookies"[0m
+  ↳ app/models/cookie.rb:4
+  Rendering answers/new.html.erb within layouts/application
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/answers/new.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/models/user.rb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:8
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:8
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/models/user.rb:8
+  Rendered answers/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 408ms (Views: 352.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-01-21 12:10:06 +0000
+Processing by AuthController#login as HTML
+  Rendering auth/login.html.erb within layouts/application
+  Rendered auth/login.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 61ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:13:02 +0000
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NnpnjfllMncawL8tqPBRwC0EFIAggN4inxcX3L17IbrmCssZXvKUpZ9GetLYo9mCkm8rywPr8GkyWviu/lhCnA==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 38757ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `authenticate'
+app/controllers/auth_controller.rb:7:in `authenticate'
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:13:53 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NnpnjfllMncawL8tqPBRwC0EFIAggN4inxcX3L17IbrmCssZXvKUpZ9GetLYo9mCkm8rywPr8GkyWviu/lhCnA==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 31093ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `authenticate'
+app/controllers/auth_controller.rb:7:in `authenticate'
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:14:38 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NnpnjfllMncawL8tqPBRwC0EFIAggN4inxcX3L17IbrmCssZXvKUpZ9GetLYo9mCkm8rywPr8GkyWviu/lhCnA==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 155955ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `authenticate'
+app/controllers/auth_controller.rb:7:in `authenticate'
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:17:23 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NnpnjfllMncawL8tqPBRwC0EFIAggN4inxcX3L17IbrmCssZXvKUpZ9GetLYo9mCkm8rywPr8GkyWviu/lhCnA==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Daniel Kaczmarczyk"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6
+No template found for AuthController#authenticate, rendering head :no_content
+Completed 204 No Content in 435ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-01-21 12:17:26 +0000
+Processing by AuthController#login as HTML
+  Rendering auth/login.html.erb within layouts/application
+  Rendered auth/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 199ms (Views: 193.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:17:28 +0000
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0BviPI+1ErFSrId06gmGXanAUGOYPQ1a44UDw5hByS8Aa06oKCK0Y9cqQouaWg4fFqtvKLtWIxFOyOyx22KqCQ==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Daniel Kaczmarczyk"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6
+No template found for AuthController#authenticate, rendering head :no_content
+Completed 204 No Content in 657ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-01-21 12:18:04 +0000
+Processing by AuthController#login as HTML
+  Rendering auth/login.html.erb within layouts/application
+  Rendered auth/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 78ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:18:09 +0000
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/sAqK0OWs2Wf633nWmWMusns6G627u9kycYTBWyMo58usIa/5AEVtxptuBgqNgT4dofXJZWFwS9ki/x3L6/AuQ==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Daniel Kaczmarczyk"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6
+Completed 500 Internal Server Error in 57380ms (ActiveRecord: 1.9ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `authenticate'
+app/controllers/auth_controller.rb:8:in `authenticate'
+Started GET "/login" for 127.0.0.1 at 2020-01-21 12:19:10 +0000
+Processing by AuthController#login as HTML
+  Rendering auth/login.html.erb within layouts/application
+  Rendered auth/login.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 763ms (Views: 743.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:19:15 +0000
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SOzLecRmlUFWGU9kBBXzPUaF2ntylfTCGZq8nFu8VxGYnGftY/Ezk9Ofipt0Rnt/+e7lMFH+2om011PuGJ80Nw==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Daniel Kaczmarczyk"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6
+No template found for AuthController#authenticate, rendering head :no_content
+Completed 204 No Content in 2719ms (ActiveRecord: 1.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:19:30 +0000
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SOzLecRmlUFWGU9kBBXzPUaF2ntylfTCGZq8nFu8VxGYnGftY/Ezk9Ofipt0Rnt/+e7lMFH+2om011PuGJ80Nw==", "username"=>"dan", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "dan"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6
+No template found for AuthController#authenticate, rendering head :no_content
+Completed 204 No Content in 1174ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-01-21 12:19:35 +0000
+Processing by AuthController#login as HTML
+  Rendering auth/login.html.erb within layouts/application
+  Rendered auth/login.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 43ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-21 12:19:44 +0000
+Processing by AuthController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VI6dnIcBr+ueK02qMpmIJvs+Z1xcsTKEY8OSsj2H4mmE/jEIIJYJORutiFVCygBkRFVYF3/aHM/Ojn3AfqSBTw==", "username"=>"Daniel Kaczmarczyk", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Daniel Kaczmarczyk"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6
+No template found for AuthController#authenticate, rendering head :no_content
+Completed 204 No Content in 1885ms (ActiveRecord: 0.4ms)
+
+

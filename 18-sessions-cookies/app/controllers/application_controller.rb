@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
     helper_method :logged_in?
 
     def set_current_user
-        byebug
         if logged_in?
             @current_user = User.find(session[:user_id])
         else
