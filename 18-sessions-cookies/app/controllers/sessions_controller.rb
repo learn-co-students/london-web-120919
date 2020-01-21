@@ -3,17 +3,18 @@ class SessionsController < ApplicationController
   end
 
   def authenticate
-    # rewrite for a nicer if
     user = User.find_by(name: params['username'])
-    byebug
-    unless user
-      puts 'error - user not found'
-    else 
-      if user.authenticate params['password']
-        puts 'you have logged in'
-      else
-        puts 'the password is wrong'
-      end
+    if !(user && user.authenticate(params['password']))
+      session[:user_id] = nil
+    else
+      puts 'you have logged in'
+      session[:user_id] = user.id
+      redirect_to new_answer_path
     end
+  end
+
+  def logout
+    session.delete(:user_id)
+    redirect_to new_answer_path
   end
 end

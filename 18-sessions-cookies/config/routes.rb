@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'answers#new'
   get '/login', to: 'sessions#login', as: :login
   post '/login', to: 'sessions#authenticate'
-  get '/logout', to: 'answers#logout', as: :logout
+  get '/logout', to: 'sessions#logout', as: :logout
+  get '/admin', to: 'users#admin', as: :admin_panel
   resources :users
   resources :answers
   resources :questions

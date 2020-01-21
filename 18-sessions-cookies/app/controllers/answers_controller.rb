@@ -24,11 +24,6 @@ class AnswersController < ApplicationController
         end
     end
 
-    def logout
-        session.delete(:user_id)
-        redirect_to new_answer_path
-    end
-
     private
 
     def answer_params

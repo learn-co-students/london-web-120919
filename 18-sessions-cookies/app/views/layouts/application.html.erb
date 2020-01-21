@@ -16,11 +16,31 @@
   <body>
       <nav>
         <div class="container">
-        <div class="float-left"><h3 style="margin-bottom: 0;">Cookie Quiz</h3></div>
-        <% if logged_in? %>
-        <div class="float-right">
-          <%= link_to 'Log out', logout_path %>
+        <div>
+          <% if flash[:not_authorized] %>
+            <p style='color: red'>
+              GO AWAY
+            </p>
+          <% end %>
         </div>
+        <div class="float-left">
+          <h3 style="margin-bottom: 0;">
+            <%= link_to 'Cookie Quiz', root_path %>
+          </h3>
+        </div>
+        <% if logged_in? %>
+            <div class="float-right">
+              <%= link_to 'Log out', logout_path %>
+            </div>
+            <% if admin? %>
+              <div class="float-right">
+                <%= link_to 'Admin panel', admin_panel_path %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="float-right">
+              <%= link_to 'Log in', login_path %>
+            </div>
         <% end %>
         </div>
       </nav>
