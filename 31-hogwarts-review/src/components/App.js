@@ -51,7 +51,7 @@ class App extends Component {
         <button onClick={this.toggleGreasedFilter}>{ this.state.greasedFilter ? "Show All Hogs" : "Show Only Greased Hogs"}</button>
         { /* Add a click event to this button that will flip the state of sortByName, triggering a rerender. The text of the button will change depending on the current state of sortByName */}
         <button onClick={this.toggleSortByName}>{ this.state.sortByName ? "Sort Hogs by Weight" : "Sort Hogs by Name"}</button>
-        {/* Pass down the array of hog objects that HogList needs to render - we've already decided whether this needs to be a filtered list and whether it's sorted by name or age, so HogList only has to worry about rendering whatever it's given */}
+        {/* Pass down the array of hog objects that HogList needs to render - we've already decided whether this needs to be a filtered list and whether it's sorted by name or weight, so HogList only has to worry about rendering whatever it's given */}
         <HogList hogs={hogsToRender} />
       </div>
     );
