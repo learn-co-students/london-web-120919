@@ -22,7 +22,7 @@ const Table = ({ eatenSushis, balance }) => {
             /*
                renderPlates takes an array
                and renders an empty plate
-               for every element in the array. We pass it the array of eatenSushis from state, so that it renders an empty plate for every sushi that's been eaten.
+               for every element in the array. We pass it the array of eatenSushis from state, so that it renders an empty plate for every sushi that's been eaten
             */
             renderPlates(eatenSushis)
           }
