@@ -23,14 +23,7 @@ class App extends React.Component {
         .then(json => this.signIn(json.username, json.token))
     }
   }
-
-  signOut = () => {
-    this.setState({
-      username: null
-    })
-    localStorage.removeItem("token")
-  }
-
+  
   signIn = (username, token) => {
     // Set the state of username to be the username the server sent back
     this.setState({
